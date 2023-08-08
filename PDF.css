@@ -1,25 +1,35 @@
 body{
-    background-color: cadetblue;
-    color: beige;
+    background-color: rgb(137, 223, 219);
+    color: #4d4d4d;
     text-align: center;
 }
 .round{
     /* margin:10vh auto; */
     border-radius: 50%;
-    width:10vw;
-    margin-left: 5vw;
+    width:6vw;
+    margin-left: 0vw;
 }
 .title{
     display: flex;
     justify-content:center ;
     align-items: center;
+    font-family: monospace;
 }
 .headdata{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10%;
+    margin-bottom: 2%;
     border: 1px solid #111;
     
+}
+/*Services table*/
+#servTable{
+    margin:0 auto;
+    width:60%;
+
+}
+tbody > tr{
+    border:1px solid black;
 }
