@@ -20,7 +20,7 @@
         if(tax!= "" && net != "" ){
             const addBtn = document.getElementById("addServiceBtn");
             const tbody = document.querySelector("#servTable tbody");
-                        
+
                 const newRow = document.createElement("tr");
             if (serviceInput.querySelector("#sname").value != "none"){                    
                 const serviceId = serviceInput.querySelector("#sname").value;
@@ -61,7 +61,7 @@
       }
       else{
             errorMsg.style.display="block";
-                errorMsg.textContent="Entering string data in this line is not allowed."
+                errorMsg.textContent="Please entering only numeric data Service Tax and Net price fields."
       }
     }
     
