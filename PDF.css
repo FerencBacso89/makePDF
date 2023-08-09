@@ -19,17 +19,49 @@ body{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    /*align-items: center;*/
     margin-bottom: 2%;
-    border: 1px solid #111;
-    
+    border-bottom: 4px double #111;
+    margin-left: inherit;
+    width:100%;
 }
 /*Services table*/
 #servTable{
     margin:8vh auto;
-    width:60%;
-
+    width:100%;
 }
-tbody > tr{
-    border:1px solid black;
+tbody > tr,th{
+    border-bottom:1px solid black;
+}
+/*inputfields*/
+.inputService{
+    display: inline-flex;
+    flex-direction: row;
+}
+.serName, .serTax, .serNet{
+    margin-left: 10px;
+}
+/*Custromer headline data*/
+.customerData{
+    margin-top:100px;
+    float: right;    
+    font-size: .9rem;
+    font-weight: 600;
+}
+/*Company headline data*/
+.companyData{
+    margin-top: 100px;
+        float: left;
+        font-size: .9rem;
+        font-weight: 600;
+}
+/*buttons in page*/
+.btnAction{
+    margin-top:2vh;
+}
+.btnAction:last-child {
+    margin-left: 1vh;
+}
+#getPdf{
+    margin-left: 25px;
 }
