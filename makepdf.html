@@ -21,9 +21,9 @@
     <div id="InvoiceData">
         <section class="headdata container-fliud row-cols-3 row">
             <div class="companyData">
-                <label>company name: DevBacso GMBHKFT</label><br/>
-                <label>company Address: DevBacso GMBHKFT</label><br />
-                <label>tax number : 1002255-88585-9635</label>
+                <label>Company name: DevBacso GMBHKFT</label><br/>
+                <label>Company address: DevBacso GMBHKFT</label><br />
+                <label>Tax number: 1002255-88585-9635</label>
             </div>
             <div>
                 <h2 class="title">DevBacso Web development services</h2>
@@ -48,38 +48,49 @@
                             <th>Gross price</th>
                         </tr>
                         <tbody>
-                            <!-- Existing rows can be added here -->
+                            <!-- Services'll be add here -->
                         </tbody>
                     </thead>
                 </table>
                
         </section>
-        
+        <label id="errorMsg" style="display: none;"></label>
         <label>Name:</label><input type="text" id="name" value="John Doe"><br><br>
         <label>Email:</label><input type="email" id="email" value="john.doe@example.com"><br><br>
         <label>Phone:</label><input type="tel" id="phone" value="+1234567890"><br><br>
     </div>
     <div class="addBtn">
         <div class="inputService">
-            <div class="serID">
-                <label for="sid"> Service Id:</label>
-                <input id="sid" name="sid" />
-            </div>
             <div class="serName">
-                <label for="sname"> Service Name:</label>
-                <input id="sname" name="sname" />
+                <label> Service Name:</label>
+                <select id="sname" >
+                    <!-- options has got a value which is service id -->
+                    <option value="none">-</option>
+                    <optgroup label="Meeting">
+                        <option value="dBacso-2014">1H Consultation</option>
+                        <option value="dBacso-2015">0.5H Consultation</option>
+                        <option value="dBacso-2016">Needs assessment</option>
+                        <option value="dBacso-2017">Change management</option>
+                    </optgroup>
+                    <optgroup label="Presentation">
+                        <option value="dBacso-2018">Stage 1 presentation</option>
+                        <option value="dBacso-2019">Half way presentation</option>
+                        <option value="dBacso-2020">Product presentation</option>                        
+                    </optgroup>
+                    <optgroup label="Documentation">
+                        <option value="dBacso-2021">Test documentation</option>
+                        <option value="dBacso-2022">Security documentation</option>
+                        <option value="dBacso-2023">User manual</option>                        
+                    </optgroup>
+                </select>
             </div>
             <div class="serTax">
                 <label for="stax"> Service Tax:</label>
-                <input id="stax" name="stax" />
+                <input id="stax" type="text" name="stax" />
             </div>
             <div class="serNet">
                 <label for="snet">Net price:</label>
-                <input id="snet" name="snet" />
-            </div>
-            <div class="serGross">
-                <label for="sgross">Gross price:</label>
-                <input id="sgross" name="sgross" />
+                <input id="snet" type="text" name="snet" />
             </div>
         </div>
         <button onclick="AddServiceToTable()"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"

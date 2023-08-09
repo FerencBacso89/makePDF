@@ -10,25 +10,42 @@
             html2pdf().from(element).set(opt).save();
         }
     AddServiceToTable=()=>{
-        const addBtn = document.getElementById("addServiceBtn"); 
-        const tbody = document.querySelector("#servTable tbody");
+        const serviceInput =document.querySelector(".inputService");
+         const tax = serviceInput.querySelector("#stax").value.replace(/[^0-9\.]/g, '');
+         const net = serviceInput.querySelector("#snet").value.replace(/[^0-9]/g, '');
+            alert(tax);
+        if(tax!= "" && net != ""){
+            const addBtn = document.getElementById("addServiceBtn");
+            const tbody = document.querySelector("#servTable tbody");
 
-            const newRow = document.createElement("tr");
-            const serviceInput =document.querySelector(".inputService");
+                const newRow = document.createElement("tr");
+            if (serviceInput.querySelector("#sname").value != "none"){                    
+                const serviceId = serviceInput.querySelector("#sname").value;
+                const serviceName = document.getElementById("sname").selectedOptions[0].textContent;
             
-            const serviceId = serviceInput.querySelector("#sid").value;
-            const serviceName = serviceInput.querySelector("#sname").value;
-            const tax = serviceInput.querySelector("#stax").value;
-            const net = serviceInput.querySelector("#snet").value;
-            const gross = serviceInput.querySelector("#sgross").value; // to be calculate-> net*((tax/100)+1)
-                const values = [serviceId, serviceName, tax, net, gross];
+                let calcGross = (1+(parseFloat(tax)/100))*parseInt(net);
+                
+                const gross = calcGross; // to be calculate-> net*((tax/100)+1)
+                    const values = [serviceId, serviceName, tax, net, gross];
 
-                values.forEach(value => {
-                    const cell = document.createElement("td");
-                    cell.textContent = value;
-                    newRow.appendChild(cell);
-                });
-            // Append the new row to the table body
-        tbody.appendChild(newRow);
+                    values.forEach(value => {
+                        const cell = document.createElement("td");
+                        cell.textContent = value;
+                        newRow.appendChild(cell);
+                    });
+                // Append the new row to the table body
+            tbody.appendChild(newRow);
+            errorMsg.style.display="none";
+            serviceInput.querySelector("#snet").value="";
+            } else{
+                // entering an empty data line is not allowed
+                errorMsg.style.display="block";
+                errorMsg.textContent="Entering an empty data line is not allowed."
+            }
+      }
+      else{
+            errorMsg.style.display="block";
+                errorMsg.textContent="Entering string data in this line is not allowed."
+      }
     }
     
