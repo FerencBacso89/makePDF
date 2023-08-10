@@ -1,0 +1,4 @@
+
+-  Táblázattól vonallal elválasztva netto és brutto szumma összeg
+-  Netto értéknek legyen pénzneme a Táblázatban.
+-  Táblázat aljára időbélyeg
