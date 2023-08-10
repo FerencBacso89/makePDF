@@ -55,6 +55,18 @@ tbody > tr,th{
         font-size: .9rem;
         font-weight: 600;
 }
+/*Error maessage*/
+#message{
+    padding-left: 10px;
+    font-size: 18px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 600;
+    text-decoration: underline;
+}
+#warn{
+    width: 26px;
+    height: 26px;
+}
 /*buttons in page*/
 .btnAction{
     margin-top:2vh;

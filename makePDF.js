@@ -19,13 +19,12 @@
          //After this throw an error message.
         if(tax!= "" && net != "" ){
             const addBtn = document.getElementById("addServiceBtn");
-            const tbody = document.querySelector("#servTable tbody");
+            const tbody = document.querySelector("#servTable tbody");                         
 
                 const newRow = document.createElement("tr");
             if (serviceInput.querySelector("#sname").value != "none"){                    
                 const serviceId = serviceInput.querySelector("#sname").value;
-                const serviceName = document.getElementById("sname").selectedOptions[0].textContent;
-            
+                const serviceName = document.getElementById("sname").selectedOptions[0].textContent;                
                 let calcGross = (1+(parseFloat(tax)/100))*parseInt(net);
                 const gross = Math.round(calcGross)+" EUR"; // to be calculate-> net*((tax/100)+1)
                 // Check Customer data is filled or not
@@ -47,7 +46,7 @@
                     }
                     else{                       
                         errorMsg.style.display="block";
-                        errorMsg.textContent="Customer data is not filled. Please fill up your customer's data";
+                        message.textContent="Customer data is not filled. Please fill up your customer's data";
                     } 
                    
                 // Append the new row to the table body
@@ -56,12 +55,12 @@
             } else{
                 // entering an empty data line is not allowed
                 errorMsg.style.display="block";
-                errorMsg.textContent="Entering an empty data line is not allowed."
+                message.textContent="Entering an empty data line is not allowed."
             }
       }
       else{
             errorMsg.style.display="block";
-                errorMsg.textContent="Please entering only numeric data Service Tax and Net price fields."
+                message.textContent="Please entering only numeric data Service Tax and Net price fields."
       }
     }
     
