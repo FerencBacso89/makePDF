@@ -3,6 +3,7 @@
             var opt = {
                 margin: 1,
                 filename: 'devInvoice.pdf',
+                background:'#4d4d4d',
                 image: { type: 'jpeg', quality: 0.98 },
                 html2canvas: { scale: 2 },
                 jsPDF: { unit: 'cm', format: 'A4', orientation: 'portrait' }
